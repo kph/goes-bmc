@@ -45,10 +45,14 @@ github.com/platinasystems/gpio v1.0.0 h1:95YU/4i9dA7WxuSTQQSTevBWj578UZc1CUlhfva
 github.com/platinasystems/gpio v1.0.0/go.mod h1:UsR1pB6U/S7Ql6RDrF/S6rMJqWOiZu3H2mKQeEe4v7U=
 github.com/platinasystems/i2c v1.2.0 h1:H1BgNrz4s15AcR6Y4WxZS+eMgX00pu8ZoLfVHb5VoIw=
 github.com/platinasystems/i2c v1.2.0/go.mod h1:Yj5hRxt+HXbW1rXv9aTtxUNZsegDjeWerUPY5BIjDVM=
+github.com/platinasystems/ldp v0.0.2 h1:pSqelqQiHOpIcNpgpNYRgV4BhVCUqTrrQSLHk7Lbhlw=
+github.com/platinasystems/ldp v0.0.2/go.mod h1:5FioI0SgC7RQZOtJRvnXqrInH0D4U2Pn/6M2rT+5Tj0=
 github.com/platinasystems/liner v0.0.0-20170801164932-8dd8fbd0e16d h1:jVkqqhZKx8eAb94QYDajS9KOh5B/rOAx34H7DDZGrEo=
 github.com/platinasystems/liner v0.0.0-20170801164932-8dd8fbd0e16d/go.mod h1:5N7zNCEtHP1s5kK6pVgaFwtzEleCreRubeHBnE4rGso=
 github.com/platinasystems/log v1.2.1 h1:a43xeRp+KouaPlVTfOdeI2vNj755PBf8ovKEAMT8o5w=
 github.com/platinasystems/log v1.2.1/go.mod h1:5Wjp9vxMfkZGWz2Ep3ghzsfarcs9MMfiE2RzKwseyKQ=
+github.com/platinasystems/loopback v0.0.2 h1:iv7rWbJUx5YrB93/kPrMcbJ3qWZ+XZAszLD4yb73eSM=
+github.com/platinasystems/loopback v0.0.2/go.mod h1:L363iEtOA7dYJkxGa0b81/0hiSY34/H084Kben/DDRA=
 github.com/platinasystems/memio v0.0.0-20181109233200-08a432045d57/go.mod h1:5432a+C/LwmCPg543MFUCCzgTaEpAURrTC01os0/8k8=
 github.com/platinasystems/parms v1.0.0 h1:pLTnredJUqeet4KoylUe+VVkX/geFORdstHLdZgwSmo=
 github.com/platinasystems/parms v1.0.0/go.mod h1:PBi8SO7fo+s+qLsAHH3QAqAPzO2dLHWca/DM+2vKPn0=
@@ -72,5 +76,7 @@ golang.org/x/net v0.0.0-20181108082009-03003ca0c849 h1:FSqE2GGG7wzsYUsWiQ8MZrvEd
 golang.org/x/net v0.0.0-20181108082009-03003ca0c849/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/sys v0.0.0-20190403152447-81d4e9dc473e h1:nFYrTHrdrAOpShe27kaFHjsqYSEQ0KWqdWLu3xuZJts=
 golang.org/x/sys v0.0.0-20190403152447-81d4e9dc473e/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20190507160741-ecd444e8653b h1:ag/x1USPSsqHud38I9BAC88qdNLDHHtQ4mlgQIZPPNA=
+golang.org/x/sys v0.0.0-20190507160741-ecd444e8653b/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
