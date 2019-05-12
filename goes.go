@@ -237,7 +237,7 @@ var Goes = &goes.Goes{
 		"/init":  &slashinit.Command{},
 		"sleep":  sleep.Command{},
 		"source": &source.Command{},
-		"sshd":   &sshd.Command{FailSafe: false},
+		"sshd":   &sshd.Command{FailSafe: true},
 		"start": &start.Command{
 			ConfGpioHook: startConfGpioHook,
 		},
