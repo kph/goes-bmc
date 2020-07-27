@@ -114,7 +114,7 @@ func copyRecurse(src, dst string, overwrite bool) (err error) {
 			return err
 		}
 		if _, err := os.Stat(dst); os.IsNotExist(err) {
-			err = os.Mkdir(dst, stat.Mode())
+			err = os.MkdirAll(dst, stat.Mode())
 			if err != nil {
 				return err
 			}
@@ -231,6 +231,11 @@ func (c Command) Main(args ...string) (err error) {
 		return fmt.Errorf("Error copying /etc to /volatile/etc: %s",
 			err)
 	}
+	err = copyRecurse("/var/perm", "/volatile/var/perm", true)
+	if err != nil {
+		return fmt.Errorf("Error copying /etc to /volatile/var/perm: %s",
+			err)
+	}
 
 	if umount {
 		for {
@@ -294,7 +299,14 @@ func (c Command) Main(args ...string) (err error) {
 			{"/perm", "/dev/ubi0_0", "ubifs", 0},
 			{"/boot", "/perm/boot", "", syscall.MS_BIND},
 			{"/etc", "/perm/etc", "", syscall.MS_BIND},
+			{"/var/perm", "/perm/var/perm", "", syscall.MS_BIND},
 		} {
+			if _, err := os.Stat(mount.dev); os.IsNotExist(err) {
+				err = os.MkdirAll(mount.dev, 0644)
+				if err != nil {
+					return fmt.Errorf("Error creating %s: %v", mount.dev, err)
+				}
+			}
 			if err := syscall.Mount(mount.dev, mount.mp,
 				mount.fstype, mount.flags, ""); err != nil {
 				return fmt.Errorf("Error mounting %s: %s",
@@ -310,6 +322,11 @@ func (c Command) Main(args ...string) (err error) {
 			err = copyRecurse("/volatile/etc", "/perm/etc", true)
 			if err != nil {
 				return fmt.Errorf("Error copying /volatile/etc to /perm/etc: %s",
+					err)
+			}
+			err = copyRecurse("/volatile/var/perm", "/perm/var/perm", true)
+			if err != nil {
+				return fmt.Errorf("Error copying /volatile/var/perm to /perm/var/perm: %s",
 					err)
 			}
 		}

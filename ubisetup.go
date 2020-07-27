@@ -56,7 +56,7 @@ func copyRecurse(src, dst string, overwrite bool) (err error) {
 			return err
 		}
 		if _, err := os.Stat(dst); os.IsNotExist(err) {
-			err = os.Mkdir(dst, stat.Mode())
+			err = os.MkdirAll(dst, stat.Mode())
 			if err != nil {
 				return err
 			}
@@ -264,6 +264,13 @@ func ubiSetup() (err error) {
 		}
 	}
 
+	if _, err := os.Stat("/var/perm"); os.IsNotExist(err) {
+		err = os.MkdirAll("/var/perm", os.FileMode(0666))
+		if err != nil {
+			return err
+		}
+	}
+
 	perm, err := ubi.FindVolume(0, "perm")
 	if err != nil {
 		return err
@@ -281,13 +288,14 @@ func ubiSetup() (err error) {
 	}{
 		{"/etc", false},
 		{"/boot", true},
+		{"/var/perm", false},
 	} {
 		err = copyRecurse(i.dir, "/perm"+i.dir, i.overwrite)
 		if err != nil {
 			return err
 		}
 		if _, err := os.Stat("/volatile" + i.dir); os.IsNotExist(err) {
-			err = os.Mkdir("/volatile"+i.dir, os.FileMode(0666))
+			err = os.MkdirAll("/volatile"+i.dir, os.FileMode(0666))
 			if err != nil {
 				return err
 			}
