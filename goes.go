@@ -22,6 +22,7 @@ import (
 	"github.com/platinasystems/goes-bmc/cmd/w83795d"
 	"github.com/platinasystems/goes/cmd"
 	"github.com/platinasystems/goes/cmd/bang"
+	"github.com/platinasystems/goes/cmd/bmcd"
 	"github.com/platinasystems/goes/cmd/buildid"
 	"github.com/platinasystems/goes/cmd/buildinfo"
 	"github.com/platinasystems/goes/cmd/cat"
@@ -117,6 +118,7 @@ var Goes = &goes.Goes{
 	},
 	ByName: map[string]cmd.Cmd{
 		"!":       bang.Command{},
+		"bmcd":    bmcd.Command{},
 		"cat":     cat.Command{},
 		"cd":      &cd.Command{},
 		"chmod":   chmod.Command{},
